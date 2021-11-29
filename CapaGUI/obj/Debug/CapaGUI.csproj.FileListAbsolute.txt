@@ -1,9 +1,0 @@
-D:\repositories\sergio-asenjo\arq-soa-prueba2\CapaGUI\bin\Debug\CapaGUI.exe.config
-D:\repositories\sergio-asenjo\arq-soa-prueba2\CapaGUI\bin\Debug\CapaGUI.exe
-D:\repositories\sergio-asenjo\arq-soa-prueba2\CapaGUI\bin\Debug\CapaGUI.pdb
-D:\repositories\sergio-asenjo\arq-soa-prueba2\CapaGUI\obj\Debug\CapaGUI.csproj.AssemblyReference.cache
-D:\repositories\sergio-asenjo\arq-soa-prueba2\CapaGUI\obj\Debug\CapaGUI.Properties.Resources.resources
-D:\repositories\sergio-asenjo\arq-soa-prueba2\CapaGUI\obj\Debug\CapaGUI.csproj.GenerateResource.cache
-D:\repositories\sergio-asenjo\arq-soa-prueba2\CapaGUI\obj\Debug\CapaGUI.csproj.CoreCompileInputs.cache
-D:\repositories\sergio-asenjo\arq-soa-prueba2\CapaGUI\obj\Debug\CapaGUI.exe
-D:\repositories\sergio-asenjo\arq-soa-prueba2\CapaGUI\obj\Debug\CapaGUI.pdb

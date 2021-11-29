@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{83973EDD-F39C-452F-8385-21F07B6BA663}</ProjectGuid>
+    <ProjectGuid>{2BF947C1-9B9F-4CC7-87C7-1661D46D8E4E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>CapaGUI</RootNamespace>
     <AssemblyName>CapaGUI</AssemblyName>
