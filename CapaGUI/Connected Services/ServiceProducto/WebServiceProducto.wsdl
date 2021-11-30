@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="webConsultarPeso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="producto" type="tns:Producto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Producto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Sku" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Num_captura" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Peso_captura" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fecha" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EsAprobado" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="webConsultarPesoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="webConsultarPesoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webRegistraCaptura">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="producto" type="tns:Producto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="webRegistraCapturaResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="webConsultarPesoSoapIn">
+    <wsdl:part name="parameters" element="tns:webConsultarPeso" />
+  </wsdl:message>
+  <wsdl:message name="webConsultarPesoSoapOut">
+    <wsdl:part name="parameters" element="tns:webConsultarPesoResponse" />
+  </wsdl:message>
+  <wsdl:message name="webRegistraCapturaSoapIn">
+    <wsdl:part name="parameters" element="tns:webRegistraCaptura" />
+  </wsdl:message>
+  <wsdl:message name="webRegistraCapturaSoapOut">
+    <wsdl:part name="parameters" element="tns:webRegistraCapturaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceProductoSoap">
+    <wsdl:operation name="webConsultarPeso">
+      <wsdl:input message="tns:webConsultarPesoSoapIn" />
+      <wsdl:output message="tns:webConsultarPesoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="webRegistraCaptura">
+      <wsdl:input message="tns:webRegistraCapturaSoapIn" />
+      <wsdl:output message="tns:webRegistraCapturaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceProductoSoap" type="tns:WebServiceProductoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="webConsultarPeso">
+      <soap:operation soapAction="http://tempuri.org/webConsultarPeso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webRegistraCaptura">
+      <soap:operation soapAction="http://tempuri.org/webRegistraCaptura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceProductoSoap12" type="tns:WebServiceProductoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="webConsultarPeso">
+      <soap12:operation soapAction="http://tempuri.org/webConsultarPeso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webRegistraCaptura">
+      <soap12:operation soapAction="http://tempuri.org/webRegistraCaptura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceProducto">
+    <wsdl:port name="WebServiceProductoSoap" binding="tns:WebServiceProductoSoap">
+      <soap:address location="https://localhost:44340/WebServiceProducto.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceProductoSoap12" binding="tns:WebServiceProductoSoap12">
+      <soap12:address location="https://localhost:44340/WebServiceProducto.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
